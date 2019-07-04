@@ -19,8 +19,8 @@ RUN mkdir -p /leanote/data/public/upload \
 	
 RUN hash=$(< /dev/urandom tr -dc A-Za-z0-9 | head -c${1:-64};echo;); \
     sed -i "s/app.secret=.*$/app.secret=$hash #/" /leanote/conf/app.conf; \
-    sed -i "s/db.host=.*$/db.host=10.251.254.161/" /leanote/conf/app.conf; \
-    sed -i "s/db.port=.*$/db.port=31433/" /leanote/conf/app.conf; \
+    sed -i "s/db.host=.*$/db.host=10.1.251.164/" /leanote/conf/app.conf; \
+    sed -i "s/db.port=.*$/db.port=27017/" /leanote/conf/app.conf; \
     sed -i "s/site.url=.*$/site.url=\${SITE_URL} /" /leanote/conf/app.conf;
 
 VOLUME /leanote/data/
